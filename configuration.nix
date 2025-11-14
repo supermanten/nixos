@@ -18,12 +18,9 @@
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
   
-  
+  services.xserver.windowManager.qtile.enable = true;
 
-
-  services.displayManager.cosmic-greeter.enable = true;
-
-  services.desktopManager.cosmic.enable = true;
+  services.displayManager.ly.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.rio = {
@@ -35,8 +32,6 @@
      ];
    };
 
-  programs.firefox.enable = true;
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
@@ -44,6 +39,12 @@
      wget
      nushell
    ];
+
+   programs.firefox.enable = true;
+
+   fonts.packages = with pkgs;[
+      nerd-fonts.jetbrains-mono 
+  ];
 
    nix.settings.experimental-features = ["nix-command" "flakes"];
 

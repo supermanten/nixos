@@ -1,13 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "rio";
   home.homeDirectory = "/home/rio";
   home.stateVersion = "25.05";
-  programs.nushell = {
-    enable = true;
-    };
-  
+  programs.nushell = { enable = true; };
 
   home.packages = with pkgs; [
     neovim
@@ -19,9 +16,14 @@
     rofi
     git
     yazi
+    wl-clipboard
+    cliphist
     fastfetch
-    foot 
+    foot
     go
+    cargo
+    unzip
+    fd
   ];
 
 }
